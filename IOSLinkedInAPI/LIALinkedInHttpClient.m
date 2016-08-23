@@ -135,7 +135,10 @@
 - (void)showAuthorizationView:(LIALinkedInAuthorizationViewController *)authorizationViewController {
   if (self.presentingViewController == nil)
     self.presentingViewController = [[UIApplication sharedApplication] keyWindow].rootViewController;
-
+    
+  if (self.presentingViewController.presentedViewController != nil)
+    self.presentingViewController = self.presentingViewController.presentedViewController;
+    
   UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:authorizationViewController];
 
   if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
