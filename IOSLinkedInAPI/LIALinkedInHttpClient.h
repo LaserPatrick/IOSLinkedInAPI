@@ -66,20 +66,6 @@
  ** ************************************************************************************************ **/
 
 /**
- * Returns YES if the current cached token is valid and not expired, NO otherwise.
- * @return The validity of the cached token.
- * @discussion When getting the token via the method `-getAccessToken:success:failure:`, the library is caching the token for further use.
- **/
-- (BOOL)validToken;
-
-/**
- * Returns the previsouldy cached LinkedIn access token.
- * @return The access token.
- * @discussion When getting the token via the method `-getAccessToken:success:failure:`, the library is caching the token for further use.
- **/
-- (NSString *)accessToken;
-
-/**
  * Retrieves the access token from a valid authhorization code.
  * @param authorizationCode The authorization code.
  * @param success A success block. The success block contains a dictoinary containing the access token keyed by the string "access_token".
